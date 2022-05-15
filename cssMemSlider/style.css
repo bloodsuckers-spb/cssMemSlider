@@ -1,0 +1,119 @@
+.page {
+    --bg-color: #34353a;
+    --pripary-color: #fff;
+	--label-bg-unchecked: #cadad1;
+	--label-bg-hover: rgb(209, 117, 189);
+	--label-bg-checked: rgb(73, 74, 145);
+	--font-color: #fff;
+}
+
+html,body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color);
+    color: var(--pripary-color);
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 15%;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.overflow {
+    overflow: hidden; 
+}
+
+.slider-line {
+    display: flex;
+}
+
+.slides, .quotes {
+    flex: 0 0 100%;
+}
+
+.slides, .quotes, label {
+    transition: all linear 0.5s;
+}
+
+.mem-slider {
+    display: grid;
+    grid-template-areas: 
+    "slider slider"
+    "quotes controls" ;
+}
+
+
+.slider {
+    grid-area: slider;
+    height: 50vh;
+}
+
+.slides {
+	height: 50vh;
+}
+
+
+.quotes-slider {
+    grid-area: quotes;
+}
+
+.quotes-line {
+    padding-left: 5%;
+    align-items: center;
+}
+
+
+.controls {
+    grid-area: controls;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+label {
+	width: 0.625rem;
+	height: 0.625rem;
+	border-radius: 50%;
+	background-color: var(--label-bg-unchecked);
+    cursor: pointer;
+}
+
+label:hover {
+	background: var(--label-bg-hover)
+}
+
+#slide1:checked ~ .slider  .slides,
+#slide1:checked ~ .quotes-slider .quotes {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slider  .slides,
+#slide2:checked ~ .quotes-slider .quotes {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slider  .slides,
+#slide3:checked ~ .quotes-slider .quotes {
+    transform: translateX(-200%);
+}
+
+#slide4:checked ~ .slider  .slides,
+#slide4:checked ~ .quotes-slider .quotes {
+    transform: translateX(-300%);
+}
+
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4) {
+	background: var(--label-bg-checked);
+}
