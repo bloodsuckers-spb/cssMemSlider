@@ -5,6 +5,7 @@
 	--label-bg-hover: rgb(209, 117, 189);
 	--label-bg-checked: rgb(73, 74, 145);
 	--font-color: #fff;
+    --slides-height: 30vw;
 }
 
 html,body {
@@ -21,6 +22,7 @@ body {
 .container {
     margin: 0 auto;
     width: 100%;
+    /* задать max-width */
     padding: 0 15%;
 }
 
@@ -34,6 +36,7 @@ input[type=radio] {
 
 .slider-line {
     display: flex;
+    height: 100%;
 }
 
 .slides, .quotes {
@@ -54,11 +57,11 @@ input[type=radio] {
 
 .slider {
     grid-area: slider;
-    height: 50vh;
+    height: var(--slides-height);
 }
 
 .slides {
-	height: 50vh;
+    height: 100%;
 }
 
 
