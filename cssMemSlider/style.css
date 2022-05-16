@@ -30,7 +30,7 @@ input[type='radio'] {
 .container {
   margin: 0 auto;
   max-width: calc(1280rem / 16);
-  width: 100%;
+  width: 100vh;
   padding: 0 5%;
 }
 
